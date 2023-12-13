@@ -35,11 +35,10 @@ public class BruitPerlin2D extends Bruit2D {
 	public double bruit2D(double x, double y) {
 		double tempX, tempY;
 		int x0, y0, ii, jj, gi0, gi1, gi2, gi3;
-		double unit = 1.0f / (double) Math.sqrt(2);
 		double tmp, s, t, u, v, Cx, Cy, Li1, Li2;
 		// Adapter pour la résolution
-		x /= resolution;
-		y /= resolution;
+		x /= this.getResolution();
+		y /= this.getResolution();
 
 		// Obtenir les coordonnées de la grille associées à (x, y)
 		x0 = (int) (x);
