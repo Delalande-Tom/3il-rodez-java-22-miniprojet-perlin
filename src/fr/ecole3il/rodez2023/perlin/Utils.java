@@ -45,14 +45,16 @@ public class Utils {
      * @param seed La graine utilisée pour le mélange.
      * @return Un nouveau tableau contenant les éléments mélangés.
      * 
-     * @author philibert roquart, fainéant
+     * @author tom
      */
     public static int[] melanger(int[] tab, long seed) {
-        // Mélanger le tableau de permutation en utilisant 
-    	// ...
-    	// Bon, je le ferai plus tard, je vais réviser l'espagnol
-    	// Je mets ça, ça marchera bien en attendant
-    	// tant pis
+        Random random = new Random(seed);
+        for (int i = 0; i< tab.length; i++) {
+            int index = random.nextInt(i );
+            int temp = tab[index];
+            tab[index] = tab[i];
+            tab[i] = temp;
+        }
         return tab;
     }
 

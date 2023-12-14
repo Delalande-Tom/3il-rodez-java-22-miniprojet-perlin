@@ -112,7 +112,7 @@ public class VisualiseurBruitPerlin extends JFrame {
         
         
         ////////// CODE À MODIFIER 
-        noiseImage = new ImageBruit(new BruitPerlin2D(seed, resolution));
+        noiseImage = new ImageBruit(new SuperBruitPerlin2D(seed, resolution));
         
         ////////// FIN CODE À MODIFIER
         tickImageButton.setEnabled(true); // Désactiver le bouton initialement
