@@ -23,6 +23,12 @@ public class SuperBruitPerlin2D extends Bruit2D{
         super(graine, resolution);
     }
 
+    /**
+     * Méthode permettant d'obtenir la valeur de bruit en 2D pour les coordonnées fournies.
+     * @param x Coordonnée x pour laquelle obtenir le bruit.
+     * @param y Coordonnée y pour laquelle obtenir le bruit.
+     * @return La valeur de bruit en 2D pour les coordonnées fournies.
+     */
     @Override
     public double bruit2D(double x, double y) {
         int x0, y0, indexX, indexY, gradientIndex0, gradientIndex1, gradientIndex2, gradientIndex3;
@@ -81,10 +87,22 @@ public class SuperBruitPerlin2D extends Bruit2D{
         return vecteur[0]*x + vecteur[1]*y;
     }
 
+    /**
+     * Méthode interne utilisée pour lisser les valeurs obtenues.
+     * @param t La valeur à lisser.
+     * @return La valeur lissée.
+     */
     private double lissage(double t){
         return 6*t*t*t*t*t - 5*t*t*t*t;
     }
 
+    /**
+     * Méthode interne utilisée pour interpoler les valeurs obtenues.
+     * @param t La valeur à interpoler.
+     * @param a le paramètre a de l'interpolation.
+     * @param b le paramètre b de l'interpolation.
+     * @return La valeur interpolée.
+     */
     private double interpolation(double t, double a, double b){
         return a + t*(b-a);
     }
