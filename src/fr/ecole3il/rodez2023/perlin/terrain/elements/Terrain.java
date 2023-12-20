@@ -16,7 +16,7 @@ public class Terrain {
      * @param temperature La température du terrain.
      */
     public Terrain(double altitude, double hydrometrie, double temperature) throws MauvaiseValeurException {
-        if (hydrometrie < 1 || hydrometrie > 0 || temperature < 1 || temperature > 0) {
+        if (hydrometrie > 1 || hydrometrie < 0 || temperature > 1 || temperature < 0 ||altitude < -1 || altitude >1 ) {
             throw new MauvaiseValeurException();
         }
         this.altitude = altitude;
@@ -58,6 +58,18 @@ public class Terrain {
      */
     public TypeTerrain getTypeTerrain(DetermineurTerrain dt) {
         return dt.determinerTerrain(this.altitude,this.hydrometrie,this.temperature);
+    }
+
+    public void setAltitude(double altitude) {
+        this.altitude = altitude;
+    }
+
+    public void setHydrometrie(double hydrometrie) {
+        this.hydrometrie = hydrometrie;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 }
 

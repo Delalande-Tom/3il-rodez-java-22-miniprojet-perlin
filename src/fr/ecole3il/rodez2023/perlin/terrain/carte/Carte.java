@@ -34,8 +34,14 @@ public class Carte {
         this.largeur = scanner.nextInt();
         this.hauteur = scanner.nextInt();
         this.terrains = new Terrain[largeur][hauteur];
+        // Écriture des éléments de terrain
+        for (int y = 0; y < hauteur; y++) {
+            for (int x = 0; x < largeur; x++) {
+                String[] tabAltHydTemp = scanner.nextLine().split(" ");
+                terrains[x][y] = new Terrain(Double.parseDouble(tabAltHydTemp[0]),Double.parseDouble(tabAltHydTemp[1]),Double.parseDouble(tabAltHydTemp[2]));
+            }
+        }
         scanner.close();
-        //TODO : remplir le tableau de terrains (alt, hyd, temp)
     }
 
     /**
