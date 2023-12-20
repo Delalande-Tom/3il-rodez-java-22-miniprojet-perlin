@@ -32,7 +32,7 @@ public class SuperBruitPerlin2D extends Bruit2D{
     @Override
     public double bruit2D(double x, double y) {
         int x0, y0, indexX, indexY, gradientIndex0, gradientIndex1, gradientIndex2, gradientIndex3;
-        double deltaX,deltaY, s, t, u, v, Cx, Cy, Li1, Li2;
+        double deltaX,deltaY, s, t, u, v, Cx, Cy;
 
         // Récupère les coordonnées entières du point
         x0 = getCoordinate(x);
