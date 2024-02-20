@@ -50,10 +50,10 @@ public class Utils {
     public static int[] melanger(int[] tab, long seed) {
         Random random = new Random(seed);
         for (int i = 0; i< tab.length; i++) {
-            int index = random.nextInt(i );
-            int temp = tab[index];
-            tab[index] = tab[i];
-            tab[i] = temp;
+            int index = random.nextInt(tab.length);
+            int temp = tab[i];
+            tab[i] = tab[index];
+            tab[index] = temp;
         }
         return tab;
     }

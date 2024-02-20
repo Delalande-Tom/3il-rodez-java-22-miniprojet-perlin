@@ -1,5 +1,7 @@
 package fr.ecole3il.rodez2023.perlin.math;
 
+import fr.ecole3il.rodez2023.perlin.Utils;
+
 public class SuperBruitPerlin2D extends Bruit2D{
     // Vecteurs de gradient pour le bruit de Perlin
     private static final double[][] GRADIENT_2D = { { 1, 1 }, { -1, 1 }, { 1, -1 }, { -1, -1 }, { 1, 0 }, { -1, 0 },
@@ -19,8 +21,12 @@ public class SuperBruitPerlin2D extends Bruit2D{
         176, 115, 121, 50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195,
         78, 66, 215, 61, 156, 180 };
 
+    private final int[] permutation;
+
     public SuperBruitPerlin2D(long graine, double resolution) {
+
         super(graine, resolution);
+        this.permutation =  Utils.melanger(PERMUTATION,getGraine());
     }
 
     /**
@@ -43,10 +49,10 @@ public class SuperBruitPerlin2D extends Bruit2D{
         indexY = y0 & 255;
 
         // Récupérer les indices de gradient associés aux coins du quadrilatère
-        gradientIndex0 = PERMUTATION[indexX + PERMUTATION[indexY]] % 8;
-        gradientIndex1 = PERMUTATION[indexX + 1 + PERMUTATION[indexY]] % 8;
-        gradientIndex2 = PERMUTATION[indexX + PERMUTATION[indexY + 1]] % 8;
-        gradientIndex3 = PERMUTATION[indexX + 1 + PERMUTATION[indexY + 1]] % 8;
+        gradientIndex0 = permutation[(indexX + permutation[indexY % 256]) % 256] % 8;
+        gradientIndex1 = permutation[((indexX + 1) + permutation[indexY % 256]) % 256] % 8;
+        gradientIndex2 = permutation[(indexX + permutation[(indexY + 1) % 256]) % 256] % 8;
+        gradientIndex3 = permutation[(indexX + 1 + permutation[(indexY + 1) % 256]) % 256] % 8;
 
         // Récupérer les vecteurs de gradient et effectuer des interpolations pondérées
         s = produitScalaire(GRADIENT_2D[gradientIndex0],x - x0,y - y0);
