@@ -27,7 +27,10 @@ public class VisualiseurTerrain {
 
     public AltitudeAffichee getAltitudeAffichee(int x, int y) {
         double altitude = carte.getTerrain(x, y).getAltitude();
-        if (altitude < 0.33) {
+        if (altitude < 0){
+            return AltitudeAffichee.FondMarin;
+        }
+        else if (altitude < 0.33) {
             return AltitudeAffichee.BASSE;
         } else if (altitude < 0.66) {
             return AltitudeAffichee.MOYENNE;
