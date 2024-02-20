@@ -65,10 +65,10 @@ public class SuperBruitPerlin2D extends Bruit2D{
 
         // Interpolations pour lisser les valeurs obtenues
         deltaX = x - x0;
-        Cx = lissage(3 * deltaX * deltaX - 2 * deltaX * deltaX * deltaX);
+        Cx = 3 * deltaX * deltaX - 2 * deltaX * deltaX * deltaX;
 
         deltaY = y - y0;
-        Cy = lissage(3 * deltaY * deltaY - 2 * deltaY * deltaY * deltaY);
+        Cy = 3 * deltaY * deltaY - 2 * deltaY * deltaY * deltaY;
 
 
         return interpolation(Cy,interpolation(Cx,s,t),interpolation(Cx,u,v));

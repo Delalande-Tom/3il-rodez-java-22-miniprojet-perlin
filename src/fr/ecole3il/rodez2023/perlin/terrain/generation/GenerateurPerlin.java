@@ -6,9 +6,9 @@ import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
 public class GenerateurPerlin extends GenerateurCarte{
 
-    SuperBruitPerlin2D bruitPerlinHydrometrie;
-    SuperBruitPerlin2D bruitPerlinTemperature;
-    SuperBruitPerlin2D bruitPerlinAltitude;
+    Bruit2D bruitPerlinHydrometrie;
+    Bruit2D bruitPerlinTemperature;
+    Bruit2D bruitPerlinAltitude;
 
     /**
      * Constructeur du générateur de carte.
