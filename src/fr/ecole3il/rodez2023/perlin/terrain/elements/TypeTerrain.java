@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 public enum TypeTerrain {
 
-    COLLINES("Collines"), DESERT("Désert"),OCEAN("Océans"), PLAINE("Plaine"), FORET_FEUILLUS("Fôret de feuillus"), TOUNDRA("Toundra)"), FORET_CONIFÈRES("Fôrets de conifères"), MONTAGNE("Montagne"), MARAIS("Marais");
+    COLLINES("Hills"), DESERT("Desert"),OCEAN("Ocean"), PLAINE("Plain"), FORET_FEUILLUS("Deciduous Forest"), TOUNDRA("Tundra"), FORET_CONIFÈRES("Coniferous Forest"), MONTAGNE("Mountain"), MARAIS("Marsh");
 
     private String nom;
 
@@ -32,7 +32,7 @@ public enum TypeTerrain {
      * @return Une image représentant le type de terrain.
      */
     public BufferedImage getImage() {
-        return Utils.chargerTuile(nom.toLowerCase() + ".png");
+        return Utils.chargerTuile(nom.toLowerCase().replace(" ","_") + ".png");
     }
 
 

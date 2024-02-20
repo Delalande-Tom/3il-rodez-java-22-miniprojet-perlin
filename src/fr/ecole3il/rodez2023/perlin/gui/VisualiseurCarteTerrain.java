@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+
 import fr.ecole3il.rodez2023.perlin.terrain.carte.Carte;
 import fr.ecole3il.rodez2023.perlin.terrain.carte.ManipulateurCarte;
 import fr.ecole3il.rodez2023.perlin.terrain.concrets.VisualiseurTerrainEnonce;
@@ -231,4 +232,6 @@ public class VisualiseurCarteTerrain extends JFrame {
 			visualiseur.setVisible(true);
 		});
 	}
+
+
 }

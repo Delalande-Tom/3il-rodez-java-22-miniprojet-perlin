@@ -15,9 +15,9 @@ public class GenerateurAleatoire extends  GenerateurCarte{
      */
     public GenerateurAleatoire(long graine) {
         super(graine);
-        Random randomHydrometrie = new Random(graine);
-        Random randomTemperature = new Random(graine*2);
-        Random randomAltitude = new Random(graine*4);
+        this.randomHydrometrie = new Random(graine);
+        this.randomTemperature = new Random(graine*2);
+        this.randomAltitude = new Random(graine*4);
     }
 
     @Override

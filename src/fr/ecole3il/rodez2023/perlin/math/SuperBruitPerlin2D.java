@@ -49,10 +49,10 @@ public class SuperBruitPerlin2D extends Bruit2D{
         indexY = y0 & 255;
 
         // Récupérer les indices de gradient associés aux coins du quadrilatère
-        gradientIndex0 = permutation[(indexX + permutation[indexY % 256]) % 256] % 8;
-        gradientIndex1 = permutation[((indexX + 1) + permutation[indexY % 256]) % 256] % 8;
-        gradientIndex2 = permutation[(indexX + permutation[(indexY + 1) % 256]) % 256] % 8;
-        gradientIndex3 = permutation[(indexX + 1 + permutation[(indexY + 1) % 256]) % 256] % 8;
+        gradientIndex0 = permutation[(indexX + permutation[indexY])] % 8;
+        gradientIndex1 = permutation[(indexX + 1) + permutation[indexY]] % 8;
+        gradientIndex2 = permutation[(indexX + permutation[indexY + 1])] % 8;
+        gradientIndex3 = permutation[(indexX + 1 + permutation[indexY + 1])] % 8;
 
         // Récupérer les vecteurs de gradient et effectuer des interpolations pondérées
         s = produitScalaire(GRADIENT_2D[gradientIndex0],x - x0,y - y0);
@@ -65,10 +65,11 @@ public class SuperBruitPerlin2D extends Bruit2D{
 
         // Interpolations pour lisser les valeurs obtenues
         deltaX = x - x0;
-        Cx = 3 * deltaX * deltaX - 2 * deltaX * deltaX * deltaX;
+        Cx = lissage(3 * deltaX * deltaX - 2 * deltaX * deltaX * deltaX);
 
         deltaY = y - y0;
-        Cy = 3 * deltaY * deltaY - 2 * deltaY * deltaY * deltaY;
+        Cy = lissage(3 * deltaY * deltaY - 2 * deltaY * deltaY * deltaY);
+
 
         return interpolation(Cy,interpolation(Cx,s,t),interpolation(Cx,u,v));
     }

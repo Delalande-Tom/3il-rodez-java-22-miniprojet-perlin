@@ -9,12 +9,12 @@ public class VisualiseurTerrain {
     private final Carte carte;
     private DetermineurTerrain determineurTerrain;
 
-    public VisualiseurTerrain(Carte carte, DetermineurTerrain determineurTerrain) {
+    public VisualiseurTerrain(DetermineurTerrain determineurTerrain,Carte carte) {
         this.carte = carte;
         this.determineurTerrain = determineurTerrain;
     }
 
-    private HydrometrieAffichee getHydrometrie(int x, int y) {
+    public HydrometrieAffichee getHydrometrieAffichee(int x, int y) {
         double hydrometrie = carte.getTerrain(x, y).getHydrometrie();
         if (hydrometrie < 0.33) {
             return HydrometrieAffichee.SEC;
@@ -25,7 +25,7 @@ public class VisualiseurTerrain {
         }
     }
 
-    private AltitudeAffichee getAltitude(int x, int y) {
+    public AltitudeAffichee getAltitudeAffichee(int x, int y) {
         double altitude = carte.getTerrain(x, y).getAltitude();
         if (altitude < 0.33) {
             return AltitudeAffichee.BASSE;
@@ -36,7 +36,7 @@ public class VisualiseurTerrain {
         }
     }
 
-    private TemperatureAffichee getTemperature(int x, int y) {
+    public TemperatureAffichee getTemperatureAffichee(int x, int y) {
         double temperature = carte.getTerrain(x, y).getTemperature();
         if (temperature < 0.33) {
             return TemperatureAffichee.FROID;
