@@ -41,7 +41,12 @@ public class GenerateurPerlin extends GenerateurCarte{
         double y = (double) j / hauteur;
         double hydrometrie = bruitPerlinHydrometrie.bruit2D(x, y);
         double temperature = bruitPerlinTemperature.bruit2D(x, y);
+        //récupération des valeurs absolues pour éviter les valeurs négatives.
+        hydrometrie = Math.abs(hydrometrie);
+        temperature = Math.abs(temperature);
+
         double altitude = bruitPerlinAltitude.bruit2D(x, y);
+        System.out.println("altitude : "+altitude);
         return new Terrain(hydrometrie,temperature,altitude);
     }
 }

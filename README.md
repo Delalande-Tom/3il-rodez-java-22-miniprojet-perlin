@@ -26,3 +26,8 @@ Les différents type des variables sont :
 <h4>Q4. Pourquoi sortir, selon vous, ce bout d'algorithme de la classe ?</h4>
 <p>Selon moi il faut sortir ce bout d'algorythme car pour chaque ajout de nouveau type de terrain il faudrait modifier le code et donc potentiellement introduire une erreur dans un code qui de base fonctionne bien </p>
 
+<h2> Erreur </h2>
+
+<h4>Q1. Pourquoi est-ce que la génération Bruit de Perlin ne fonctionne pas ?</h4>
+<p> Ici la génération bruit de perlin ne fonctionne pas car l'erreur mauvaise Valeur est levé.
+Elle est levé car elle rentre dans la condition pour la levé pls précisément température < 0 . Je ne saurais dre pourquoi elle rentre dans cette condtion malgrès qu'elle n'est pas inférieur à 0. J'ai une théorie comme quoi java à du mal a comparer les double mais c'est ma seule piste.</p>
