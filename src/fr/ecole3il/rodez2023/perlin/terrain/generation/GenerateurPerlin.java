@@ -35,6 +35,14 @@ public class GenerateurPerlin extends GenerateurCarte{
         bruitPerlinAltitude = new SuperBruitPerlin2D(graine*4,1);
     }
 
+    /**
+     * Méthode permettant de générer un terrain pour les coordonnées fournies.
+     * @param i La coordonnée x pour laquelle générer le terrain.
+     * @param j La coordonnée y pour laquelle générer le terrain.
+     * @param largeur La largeur de la carte.
+     * @param hauteur La hauteur de la carte.
+     * @return Le terrain généré pour les coordonnées fournies.
+     */
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
         double x = (double) i / largeur;
@@ -46,7 +54,6 @@ public class GenerateurPerlin extends GenerateurCarte{
         temperature = Math.abs(temperature);
 
         double altitude = bruitPerlinAltitude.bruit2D(x, y);
-        System.out.println("altitude : "+altitude);
         return new Terrain(hydrometrie,temperature,altitude);
     }
 }
