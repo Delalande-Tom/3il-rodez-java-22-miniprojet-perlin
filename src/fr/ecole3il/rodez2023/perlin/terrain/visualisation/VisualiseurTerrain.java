@@ -35,7 +35,7 @@ public class VisualiseurTerrain {
         } else if (altitude < 0.66) {
             return AltitudeAffichee.MOYENNE;
         } else {
-            return AltitudeAffichee.HAUTE;
+            return AltitudeAffichee.ELVEE;
         }
     }
 
