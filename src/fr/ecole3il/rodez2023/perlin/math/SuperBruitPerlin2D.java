@@ -55,10 +55,10 @@ public class SuperBruitPerlin2D extends Bruit2D{
         indexY = y0 & 255;
 
         // Récupérer les indices de gradient associés aux coins du quadrilatère
-        gradientIndex0 = permutation[(indexX + permutation[indexY])] % 8;
-        gradientIndex1 = permutation[(indexX + 1) + permutation[indexY]] % 8;
-        gradientIndex2 = permutation[(indexX + permutation[indexY + 1])] % 8;
-        gradientIndex3 = permutation[(indexX + 1 + permutation[indexY + 1])] % 8;
+        gradientIndex0 = permutation[((indexX + permutation[indexY])%256)] % 8;
+        gradientIndex1 = permutation[((indexX + 1) + permutation[indexY])%256] % 8;
+        gradientIndex2 = permutation[(indexX + permutation[(indexY + 1)%256])%256] % 8;
+        gradientIndex3 = permutation[(indexX + 1 + permutation[(indexY + 1)%256])%256] % 8;
 
         // Récupérer les vecteurs de gradient et effectuer des interpolations pondérées
         s = produitScalaire(GRADIENT_2D[gradientIndex0],x - x0,y - y0);
