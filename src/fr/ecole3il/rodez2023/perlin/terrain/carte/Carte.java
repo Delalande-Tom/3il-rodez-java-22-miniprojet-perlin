@@ -28,6 +28,10 @@ public class Carte {
         this.terrains = generateurCarte.genererCarte(largeur, hauteur);
     }
 
+    /**
+     * Constructeur de la classe Carte pour carte existante.
+     * @param donneesCarte Les données de la carte.
+     */
     public Carte (String donneesCarte){
         Scanner scanner = new Scanner(donneesCarte);
         this.nom = scanner.nextLine();

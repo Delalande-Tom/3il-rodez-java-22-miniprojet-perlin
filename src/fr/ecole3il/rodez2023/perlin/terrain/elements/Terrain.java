@@ -60,16 +60,5 @@ public class Terrain {
         return dt.determinerTerrain(this.altitude,this.hydrometrie,this.temperature);
     }
 
-    public void setAltitude(double altitude) {
-        this.altitude = altitude;
-    }
-
-    public void setHydrometrie(double hydrometrie) {
-        this.hydrometrie = hydrometrie;
-    }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
 }
 

@@ -21,6 +21,12 @@ public class BruitAleatoire extends Bruit2D {
 
     }
 
+    /**
+     * Génère une valeur de bruit aléatoire en deux dimensions.
+     * @param x La coordonnée x.
+     * @param y La coordonnée y.
+     * @return La valeur de bruit aléatoire en deux dimensions.
+     */
     @Override
     public double bruit2D(double x, double y) {
         return random.nextDouble();

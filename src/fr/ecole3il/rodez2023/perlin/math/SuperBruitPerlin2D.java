@@ -23,6 +23,12 @@ public class SuperBruitPerlin2D extends Bruit2D{
 
     private final int[] permutation;
 
+    /**
+     * Constructeur de la classe Bruit de Perlin en deux dimensions.
+     *
+     * @param graine     La graine utilisée pour initialiser le générateur de bruit.
+     * @param resolution La résolution utilisée pour la génération du bruit.
+     */
     public SuperBruitPerlin2D(long graine, double resolution) {
 
         super(graine, resolution);

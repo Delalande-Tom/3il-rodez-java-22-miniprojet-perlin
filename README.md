@@ -1,6 +1,11 @@
 <h1>Bruit de perlin</h1>
 <p>Le bruit de perlin est une fonction mathématique qui permet de générer des images aléatoires. Il est utilisé dans les jeux vidéos pour générer des terrains aléatoires. Il est aussi utilisé dans les films pour générer des textures.</p>
 
+<h2> Ce que j'ai réalisé </h2>
+<ul> - l'entièreté du projet </ul>
+<ul> - bonus SuperBruitPerlin </ul>
+<ul> - Tests pour la classe Terrain </ul>
+
 <h2> Question du sujet </h2>
 <h4>Q1.pourquoi l'attribut graine est-il en final ?</h4>
 <p>L'attribut graine est en final car une fois que la graine à été défini il ne faut pas qu'elle puisse être modifier</p>
@@ -28,6 +33,6 @@ Les différents type des variables sont :
 
 <h2> Erreur </h2>
 
-<h4>Q1. Pourquoi est-ce que la génération Bruit de Perlin ne fonctionne pas ?</h4>
+<h4>Pourquoi est-ce que la génération Bruit de Perlin ne fonctionne pas ?</h4>
 <p> Ici la génération bruit de perlin ne fonctionne pas car l'erreur mauvaise Valeur est levé.
-Elle est levé car elle rentre dans la condition pour la levé pls précisément température < 0 . Je ne saurais dre pourquoi elle rentre dans cette condtion malgrès qu'elle n'est pas inférieur à 0. J'ai une théorie comme quoi java à du mal a comparer les double mais c'est ma seule piste.</p>
+Elle est levé car elle rentre dans la condition pour la levé plus précisément température < 0 . Je ne saurais dire pourquoi elle rentre dans cette condtion malgrès qu'elle n'est pas inférieur à 0. Cela ne le fait que dans le code production et non dans les tests. J'ai une théorie comme quoi java à du mal a comparer les double à cause des erreurs d'arrondis mais c'est ma seule piste.</p>

@@ -20,6 +20,15 @@ public class GenerateurAleatoire extends  GenerateurCarte{
         this.randomAltitude = new Random(graine*4);
     }
 
+    /**
+     * Génère un terrain aléatoire.
+     * @param i        La position verticale dans la carte.
+     * @param j        La position horizontale dans la carte.
+     * @param largeur  La largeur totale de la carte.
+     * @param hauteur  La hauteur totale de la carte.
+     * Tout c'est paramètre ne sont pas utilisé dans cette méthode.
+     * @return La valeur de retour est un terrain généré aléatoirement.
+     */
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
         return new Terrain(randomHydrometrie.nextDouble(),randomTemperature.nextDouble(),randomAltitude.nextDouble());
