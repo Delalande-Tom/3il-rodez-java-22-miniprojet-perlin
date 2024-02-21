@@ -52,8 +52,7 @@ public class GenerateurPerlin extends GenerateurCarte{
         //récupération des valeurs absolues pour éviter les valeurs négatives.
         hydrometrie = Math.abs(hydrometrie);
         temperature = Math.abs(temperature);
-
         double altitude = bruitPerlinAltitude.bruit2D(x, y);
-        return new Terrain(hydrometrie,temperature,altitude);
+        return new Terrain(altitude,hydrometrie,temperature);
     }
 }

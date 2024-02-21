@@ -4,7 +4,7 @@
 <h2> Ce que j'ai réalisé </h2>
 <ul> - l'entièreté du projet </ul>
 <ul> - bonus SuperBruitPerlin </ul>
-<ul> - Tests pour la classe Terrain </ul>
+<ul> - Tests pour la classe Terrain et SuperBruitPerlin2D </ul>
 
 <h2> Question du sujet </h2>
 <h4>Q1.pourquoi l'attribut graine est-il en final ?</h4>
@@ -31,8 +31,3 @@ Les différents type des variables sont :
 <h4>Q4. Pourquoi sortir, selon vous, ce bout d'algorithme de la classe ?</h4>
 <p>Selon moi il faut sortir ce bout d'algorythme car pour chaque ajout de nouveau type de terrain il faudrait modifier le code et donc potentiellement introduire une erreur dans un code qui de base fonctionne bien </p>
 
-<h2> Erreur </h2>
-
-<h4>Pourquoi est-ce que la génération Bruit de Perlin ne fonctionne pas ?</h4>
-<p> Ici la génération bruit de perlin ne fonctionne pas car l'erreur mauvaise Valeur est levé.
-Elle est levé car elle rentre dans la condition pour la levé plus précisément température < 0 . Je ne saurais dire pourquoi elle rentre dans cette condtion malgrès qu'elle n'est pas inférieur à 0. Cela ne le fait que dans le code production et non dans les tests. J'ai une théorie comme quoi java à du mal a comparer les double à cause des erreurs d'arrondis mais c'est ma seule piste.</p>
