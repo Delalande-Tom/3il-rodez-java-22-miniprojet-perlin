@@ -27,12 +27,21 @@ public enum TypeTerrain {
     }
 
     /**
+     * Récupère le nom du fichier png représentant le type de terrain.
+     * @return Le nom du fichier png représentant le type de terrain.
+     */
+    // public pour les tests mais private en prod. Je le laisse public ici pour le projet
+    public String getPngName() {
+        return nom.toLowerCase().replace(" ","_") + ".png";
+    }
+
+    /**
      * Récupère une image représentant le type de terrain.
      *
      * @return Une image représentant le type de terrain.
      */
     public BufferedImage getImage() {
-        return Utils.chargerTuile(nom.toLowerCase().replace(" ","_") + ".png");
+        return Utils.chargerTuile(getPngName());
     }
 
 
